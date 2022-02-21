@@ -25,6 +25,11 @@
 //    return $largest;
 //}
 
+//Given an integer array nums, find the contiguous subarray (containing at least one number)
+//which has the largest sum and return its sum.
+//
+//A subarray is a contiguous part of an array.
+
 function maxSubArray($nums)
 {
     $current_sum = $result[] = $nums[0];

@@ -1,4 +1,5 @@
 <?php
+//Guess Number Higher or Lower
 
 //We are playing the Guess Game. The game is as follows:
 //

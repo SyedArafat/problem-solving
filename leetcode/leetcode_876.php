@@ -22,17 +22,11 @@ class leetcode_876 {
      * @return ListNode
      */
     function middleNode($head) {
-        $fast = $slow = $head;
-
-        while(1) {
-            $slow = $slow->next;
+        $fast = $head;
+        while($fast->next) {
+            $head = $head->next;
             $fast = $fast->next->next;
-            if(!isset($fast->next)) {
-                if(!isset($slow)) return $head;
-                return $slow;
-                break;
-            }
-
         }
+        return $head;
     }
 }

@@ -15,13 +15,30 @@
  * @param Integer[] $arr
  * @return Integer
  */
+//function peakIndexInMountainArray($arr) {
+//    for ($i= 0; $i<count($arr); $i++)
+//        if($arr[$i]>$arr[$i+1])
+//            return $i;
+//
+//}
+
 function peakIndexInMountainArray($arr) {
-    for ($i= 0; $i<count($arr); $i++)
-        if($arr[$i]>$arr[$i+1])
-            return $i;
+    $first = 0;
+    $last = count($arr) - 1;
+    $middle = (int)(($first+$last)/2);
+    while(1) {
+        if($arr[$middle]<$arr[$middle+1]) {
+            $first = $middle + 1;
+        } elseif ($arr[$middle] < $arr[$middle-1]) {
+            $last = $middle -1;
+        } else
+            return $middle;
+        $middle = (int)(($first+$last)/2);
+//        var_dump($arr[$middle]);
+    }
 
 }
 
-$arr = [24,69,100,99,79,78,67,36,26,19];
+$arr = [24,69, 70,100,99,79,78,67,36,26,19];
 $ans = peakIndexInMountainArray($arr);
 echo $ans;
